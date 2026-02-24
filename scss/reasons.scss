@@ -1,0 +1,778 @@
+// 選ばれる3つの理由
+.reasons {
+    position: relative;
+    // セクションタイトル
+    &_title {
+        color: #494949;
+    }
+    &_ready {
+        display: block;
+        font-size: 20px;
+    }
+    &_num {
+        position: absolute;
+        top: 18px;
+        left: 110px;
+        color: #f67b7b;
+        font-size: 60px;
+        font-family: "Hanazome", serif;
+    }
+    &_tsunoriyu {
+        position: absolute;
+        top: 55px;
+        left: 145px;
+    }
+    /* あしらい “Reasons” */
+    &_title.deco-en::before {
+        left: 28%;
+        top: -30px;
+        color: #c7a78e;
+        opacity: 0.6;
+    }
+    // 375pxと1440pxの切り替え
+    .pc-2line-1,
+    .pc-2line-2 {
+        display: none !important;
+    }
+    .sp-3line {
+        display: block;
+    }
+    // 理由01～03のヘッダー
+    .reason {
+        margin-top: 35px;
+        .header-wrapper {
+            position: relative; // ← これ必須
+        }
+        .header-wrapper::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 110px;
+            height: 250px; /* グラデ帯の高さ */
+            z-index: -1;
+            background: linear-gradient(
+                -52deg,
+                #e7cbb0,
+                #f9efe3,
+                #fcf7f3,
+                #ffffff
+            );
+        }
+        &visual {
+            box-sizing: border-box;
+            .img-rev {
+                transform: scaleX(-1);
+            }
+        }
+        &_visual-img {
+            width: 335px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        &_title {
+            position: relative;
+        }
+        &_num-title {
+            font-weight: 700;
+            color: #bb9677;
+        }
+        &_num {
+            position: relative;
+            font-size: 84px;
+            font-family: "Birthstone Bounce", cursive;
+            font-weight: 400;
+            opacity: 0.55;
+            top: -68px; /* ↑↓ */
+            left: 30px; /* ←→ */
+        }
+        &_label {
+            position: relative;
+            font-size: 20px;
+            top: -75px; /* ↑↓ */
+            left: 30px; /* ←→ */
+        }
+        &_title_text {
+            margin-top: -110px;
+            font-size: 14px;
+            text-align: center;
+            line-height: 2;
+            color: #494949;
+            font-weight: 700;
+        }
+        // 2つのブロック
+        &_blocks {
+            // Reasons内のアロー
+            .arrow-bg::before {
+                content: "";
+                position: absolute;
+                top: 200px;
+                width: 220px;
+                height: 260px;
+                background: no-repeat center / contain;
+                z-index: 0;
+                pointer-events: none;
+            }
+            .arrow-bg-01::before {
+                right: -20px;
+                background-image: url("../images/reason01-dots-01.png");
+            }
+
+            .arrow-bg-02::before {
+                left: -20px;
+                background-image: url("../images/reason01-dots-02.png");
+            }
+
+            .arrow-bg-03::before {
+                right: -20px;
+                background-image: url("../images/reason02-dots-01.png");
+                transform: rotate(180deg);
+            }
+
+            .arrow-bg-04::before {
+                left: -20px;
+                background-image: url("../images/reason02-dots-02.png");
+            }
+
+            .arrow-bg-05::before {
+                right: -20px;
+                background-image: url("../images/reason03-dots-01.png");
+            }
+
+            .arrow-bg-06::before {
+                left: -20px;
+                background-image: url("../images/reason03-dots-02.png");
+            }
+        }
+        &_block {
+            margin-top: 60px;
+            position: relative;
+            overflow: visible; /* ← はみ出し許可 */
+            .block {
+                &_head {
+                    text-align: center;
+                    font-size: 18px;
+                    font-weight: 700;
+                    color: #244b85;
+                    // ドット
+                    .title-dots {
+                        /* -01 */
+                        &-01::before,
+                        &::after {
+                            top: -10px;
+                            background: #22c5f3;
+                        }
+                        &-01::before {
+                            left: calc(50% + 6px);
+                        }
+                        &-01::after {
+                            left: calc(50% + 24px);
+                        }
+
+                        /* -02 */
+                        &-02::before,
+                        &-02::after {
+                            top: -10px;
+                            background: #e77b7b;
+                        }
+                        &-02::before {
+                            left: calc(50% + 40px);
+                            box-shadow: -16px 0 0 0 #e77b7b;
+                        }
+                        &-02::after {
+                            left: calc(50% + 56px);
+                        }
+
+                        /* -03 */
+                        &-03::before,
+                        &-03::after {
+                            top: 126px;
+                            background: #900ed3;
+                        }
+                        &-03::before {
+                            left: calc(50% - 46px);
+                            box-shadow: -18px 0 0 0 #900ed3;
+                        }
+                        &-03::after {
+                            left: calc(50% - 28px);
+                            box-shadow: 18px 0 0 0 #900ed3;
+                        }
+
+                        /* -04 */
+                        &-04::before,
+                        &-04::after {
+                            top: -10px;
+                            background: #ff9009;
+                        }
+                        &-04::before {
+                            left: calc(50% + 40px);
+                            box-shadow: -16px 0 0 0 #ff9009;
+                        }
+                        &-04::after {
+                            left: calc(50% + 56px);
+                        }
+
+                        /* -05 */
+                        &-05::before,
+                        &-05::after {
+                            top: 126px;
+                            background: #b97243;
+                        }
+                        &-05::before {
+                            left: calc(50% - 38px);
+                            box-shadow: -16px 0 0 0 #b97243;
+                        }
+                        &-05::after {
+                            left: calc(50% - 22px);
+                        }
+
+                        /* -06 */
+                        &-06::before,
+                        &-06::after {
+                            top: -10px;
+                            background: #e77b7b;
+                        }
+                        &-06::before {
+                            left: calc(50% + 72px);
+                            box-shadow: -16px 0 0 0 #e77b7b;
+                        }
+                        &-06::after {
+                            left: calc(50% + 88px);
+                        }
+                    }
+                    // Reasons内のドッド
+                    .title-dots::before,
+                    .title-dots::after {
+                        content: "";
+                        position: absolute;
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+                &_title {
+                    text-align: center;
+                    line-height: 3.6;
+                }
+                &_line {
+                    display: block; /* 縦に並べる */
+                    border-bottom: 2px dotted #4568a1;
+                    line-height: 1.4; /* 文字と線の距離を詰める */
+                    width: fit-content;
+                    margin: 40px auto 0;
+                }
+                // 3つの吹き出し
+                &_items {
+                    position: relative;
+                    margin: 40px auto 60px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 28px;
+                    position: relative;
+                    z-index: 1; /* 吹き出しより後ろに背景を入れるため */
+                }
+                &_text {
+                    position: relative;
+                    width: 260px; /* 吹き出しの横幅を固定 */
+                    padding: 10px 16px;
+                    background: #fff;
+                    border-radius: 6px;
+                    text-align: center; /* ← テキスト中央揃え */
+                    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 2.4;
+                    color: #4568a1;
+                    /* ← 影はこれだけでOK（テールにも自然に付く） */
+                    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.18));
+                    .block_text-em_01 {
+                        color: #27bde7;
+                    }
+                    .block_text-em_02 {
+                        color: #e77b7b;
+                    }
+                    .block_text-em_03 {
+                        color: #900ed3;
+                    }
+                    .block_text-em_04 {
+                        color: #ff9009;
+                    }
+                    .block_text-em_05 {
+                        color: #bb7d54;
+                    }
+                    .block_text-em_06 {
+                        color: #e77b7b;
+                    }
+                }
+                /* ▼ テール（右下方向へ） */
+                &_text::after {
+                    content: "";
+                    position: absolute;
+                    right: 18px; /* ← 横位置（調整してOK） */
+                    bottom: -10px; /* ← 下位置 */
+                    width: 0;
+                    height: 0;
+                    border-width: 10px 8px 0 8px; /* 高さ / 幅 */
+                    border-style: solid;
+                    border-color: #fff transparent transparent transparent;
+                }
+                // 画像
+                &_image_wrapper {
+                    position: relative;
+                    width: fit-content;
+                    margin: 0 auto;
+                    .block_image {
+                        position: relative;
+                        z-index: 1;
+                    }
+                }
+            }
+            // Reasons内の楕円のあしらい
+            .has-oval::before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 350px;
+                aspect-ratio: 260 / 160;
+                background: no-repeat center / contain;
+                z-index: 0;
+            }
+            // 画像あしらい
+            .has-oval-01::before {
+                transform: translate(-50%, -55%);
+                background-image: url("../images/reason01-deco-oval-01.png");
+            }
+            .has-oval-02::before {
+                transform: translate(-55%, -45%);
+                background-image: url("../images/reason01-deco-oval-02.png");
+            }
+            .has-oval-03::before {
+                transform: translate(-50%, -55%);
+                background-image: url("../images/reason02-deco-oval-01.png");
+            }
+            .has-oval-04::before {
+                transform: translate(-55%, -45%);
+                background-image: url("../images/reason01-deco-oval-04.png");
+            }
+            .has-oval-05::before {
+                transform: translate(-55%, -45%);
+                background-image: url("../images/reason01-deco-oval-05.png");
+            }
+            .has-oval-06::before {
+                transform: translate(-55%, -45%);
+                background-image: url("../images/reason03-deco-oval-02.png");
+            }
+        }
+    }
+    .block_footer {
+        &-copy {
+            position: relative;
+            text-align: center;
+            margin: 40px auto 0;
+            padding: 26px 0;
+            width: 375px;
+            color: #fff;
+            font-weight: 700;
+            border-radius: 2px;
+        }
+        &-bg-01 {
+            background:
+                linear-gradient(
+                    rgba(103, 103, 103, 0.45),
+                    /* ← #676767 の45%透明 */ rgba(103, 103, 103, 0.65)
+                        /* ← #676767 の65%透明 */
+                ),
+                url("../images/footer-bg-01.jpg") center / cover no-repeat;
+        }
+        &-bg-02 {
+            background:
+                linear-gradient(
+                    rgba(103, 103, 103, 0.45),
+                    /* ← #676767 の45%透明 */ rgba(103, 103, 103, 0.65)
+                        /* ← #676767 の65%透明 */
+                ),
+                /* ← 黒半透明で薄暗く */ url("../images/footer-bg-02.jpg")
+                    center / cover no-repeat;
+        }
+        &-bg-03 {
+            background:
+                linear-gradient(
+                    rgba(103, 103, 103, 0.45),
+                    /* ← #676767 の45%透明 */ rgba(103, 103, 103, 0.65)
+                        /* ← #676767 の65%透明 */
+                ),
+                /* ← 黒半透明で薄暗く */ url("../images/footer-bg-03.jpg")
+                    center / cover no-repeat;
+        }
+    }
+}
+
+// ========================
+// PC（1440px〜）
+// ========================
+@media screen and (min-width: 1440px) {
+    .reasons {
+        .pc-2line-1,
+        .pc-2line-2 {
+            display: block !important;
+        }
+        .sp-3line {
+            display: none !important;
+        }
+        &_title {
+            position: relative;
+            display: inline-flex;
+            align-items: flex-end; // 下揃え
+            gap: 10px;
+            color: #494949;
+            line-height: 1;
+            letter-spacing: 4.6px;
+        }
+        &_title.deco-en::before {
+            left: 2%;
+            top: -26px;
+        }
+
+        &_ready {
+            display: inline-block;
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        &_ready br {
+            display: none;
+        }
+
+        &_num {
+            position: static; // absoluteやめる
+            font-size: 64px;
+            font-weight: 800;
+            color: #f67b7b;
+            font-family: "Hanazome", serif;
+            line-height: 1;
+        }
+
+        &_tsunoriyu {
+            position: static; // absoluteやめる
+            font-size: 32px;
+            font-weight: 800;
+            color: #494949;
+            line-height: 1;
+            transform: translateY(-4px); // ちょい上げ（調整）
+        }
+        .reason {
+            margin-top: 35px;
+            .header-wrapper {
+                position: relative; // ← これ必須
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+            }
+            .is-reverse {
+                flex-direction: row-reverse;
+            }
+            /* 2個目だけ反転 */
+            &:nth-child(3) .header-wrapper::before {
+                background: linear-gradient(
+                    52deg,
+                    #e7cbb0,
+                    #f9efe3,
+                    #fcf7f3,
+                    #ffffff
+                );
+            }
+            .header-wrapper::before {
+                top: 100px;
+            }
+            &_visual-img {
+                width: 480px;
+            }
+            &_title {
+                margin-left: 30px;
+            }
+            &_num {
+                top: -30px;
+                left: -50px;
+                font-size: 120px;
+            }
+            &_label {
+                display: block;
+                font-size: 30px;
+                top: -52px; /* ↑↓ */
+                left: -0px; /* ←→ */
+            }
+            &_title_text {
+                position: relative;
+                top: 50px; /* ↑↓ */
+                left: 0px; /* ←→ */
+                text-align: left;
+                font-size: 16px;
+            }
+            // アロー
+            &_blocks {
+                margin-top: 100px;
+                .arrow-bg-01::before,
+                .arrow-bg-03::before,
+                .arrow-bg-05::before {
+                    top: 120px;
+                    right: 860px;
+                }
+
+                .arrow-bg-02::before,
+                .arrow-bg-04::before,
+                .arrow-bg-06::before {
+                    top: 140px;
+                    left: 870px;
+                }
+            }
+            .block_head {
+                // ドット
+                .title-dots {
+                    /* -01 */
+                    &-01::before {
+                        left: calc(50% + 14px);
+                    }
+                    &-01::after {
+                        left: calc(50% + 40px);
+                    }
+
+                    /* -02 */
+                    &-02::before {
+                        left: calc(50% + 54px);
+                        box-shadow: -27px 0 0 0 #e77b7b;
+                    }
+                    &-02::after {
+                        left: calc(50% + 80px);
+                    }
+
+                    /* -03 */
+                    &-03::before,
+                    &-03::after {
+                        top: 66px;
+                        background: #900ed3;
+                    }
+                    &-03::before {
+                        left: calc(50% + 100px);
+                        box-shadow: -24px 0 0 0 #900ed3;
+                    }
+                    &-03::after {
+                        left: calc(50% + 28px);
+                        box-shadow: 24px 0 0 0 #900ed3;
+                    }
+
+                    /* -04 */
+                    &-04::before {
+                        left: calc(50% - 76px);
+                        box-shadow: -24px 0 0 0 #ff9009;
+                    }
+                    &-04::after {
+                        left: calc(50% - 126px);
+                    }
+
+                    /* -05 */
+                    &-05::before,
+                    &-05::after {
+                        top: 66px;
+                        background: #b97243;
+                    }
+                    &-05::before {
+                        left: calc(50% + 88px);
+                        box-shadow: -24px 0 0 0 #b97243;
+                    }
+                    &-05::after {
+                        left: calc(50% + 114px);
+                    }
+
+                    /* -06 */
+                    &-06::before {
+                        left: calc(50% + 106px);
+                        box-shadow: -24px 0 0 0 #e77b7b;
+                    }
+                    &-06::after {
+                        left: calc(50% + 132px);
+                    }
+                }
+                .title-dots::before,
+                .title-dots::after {
+                    width: 9px;
+                    height: 9px;
+                }
+            }
+            .block_line {
+                font-size: 26px;
+            }
+            .block_row {
+                margin: 80px auto 120px;
+                width: 700px;
+                height: 200px;
+                display: grid;
+                grid-auto-flow: column;
+                column-gap: 4px;
+                align-items: center;
+            }
+
+            .row-rev-fukidashi {
+                grid-column: 2;
+            }
+            .row-rev-img {
+                grid-column: 1;
+            }
+            .block_text {
+                padding: 10px 18px;
+                font-size: 18px;
+                line-height: 1.6rem;
+            }
+            .block_text--01 {
+                position: absolute;
+                top: -95px;
+                left: -310px;
+            }
+            .block_text--02 {
+                position: absolute;
+                top: -20px;
+                left: -280px;
+            }
+            .block_text--03 {
+                position: absolute;
+                top: 55px;
+                left: -300px;
+            }
+            .block_text--04 {
+                position: absolute;
+                top: -92px;
+                left: -190px;
+            }
+            .block_text--05 {
+                position: absolute;
+                top: 0px;
+                left: -160px;
+            }
+            .block_text--06 {
+                position: absolute;
+                top: 92px;
+                left: -200px;
+            }
+            .block_text--07 {
+                position: absolute;
+                top: -45px;
+                left: -340px;
+                width: 300px;
+            }
+            .block_text--08 {
+                position: absolute;
+                top: -40px;
+                left: -190px;
+            }
+            .block_text--09 {
+                position: absolute;
+                top: -40px;
+                left: -310px;
+            }
+            .block_text--10 {
+                position: absolute;
+                top: -40px;
+                left: -160px;
+            }
+            /* ▼ テール（右方向へ） */
+            .tail_right::after {
+                content: "";
+                position: absolute;
+
+                /* 位置：右辺の下辺に付ける */
+                right: -10px; /* 右辺から外に出す量（調整OK） */
+                bottom: 18px; /* 下からの位置（調整OK） */
+
+                /* 右向き三角 */
+                border-width: 8px 0 8px 10px; /* 上 右 下 左 */
+                border-style: solid;
+                border-color: transparent transparent transparent #fff;
+            }
+            /* ▼ テール（左方向へ） */
+            .tail_left::after {
+                content: "";
+                position: absolute;
+
+                /* 位置：左辺の下쪽に付ける */
+                left: -10px; /* 左に外へ出す量 */
+                bottom: 18px; /* 下からの位置 */
+
+                width: 0;
+                height: 0;
+
+                /* 左向き三角 */
+                border-width: 8px 10px 8px 0; /* 上 右 下 左 */
+                border-style: solid;
+                border-color: transparent #fff transparent transparent;
+            }
+
+            // 画像
+            .block_image_wrapper {
+                margin: 0 auto;
+                .block_image {
+                    transform: scale(1.08);
+                }
+            }
+            .has-oval-01,
+            .has-oval-03,
+            .has-oval-05 {
+                position: absolute;
+                left: 800px;
+            }
+            .has-oval-02,
+            .has-oval-04,
+            .has-oval-06 {
+                position: absolute;
+                left: 420px;
+            }
+            // Reasons内の楕円のあしらい
+            .has-oval::before {
+                width: 380px;
+                aspect-ratio: 260 / 160;
+            }
+            .block_footer {
+                &-copy {
+                    margin: 40px auto 40px;
+                    width: 960px;
+                    height: 120px;
+                    display: flex;
+                    align-items: center; // 縦中央
+                    justify-content: center; // 横中央
+                    font-size: 22px;
+                    font-weight: 700;
+                }
+                &-bg-01 {
+                    background:
+                        linear-gradient(
+                            rgba(103, 103, 103, 0.45),
+                            rgba(103, 103, 103, 0.65)
+                        ),
+                        url("../images/footer-bg-01-pc.png") center / cover
+                            no-repeat;
+                }
+                &-bg-02 {
+                    background:
+                        linear-gradient(
+                            rgba(103, 103, 103, 0.45),
+                            rgba(103, 103, 103, 0.65)
+                        ),
+                        url("../images/footer-bg-02-pc.png") center / cover
+                            no-repeat;
+                }
+                &-bg-03 {
+                    background:
+                        linear-gradient(
+                            rgba(103, 103, 103, 0.45),
+                            rgba(103, 103, 103, 0.65)
+                        ),
+                        url("../images/footer-bg-03-pc.png") center / cover
+                            no-repeat;
+                }
+            }
+        }
+    }
+}

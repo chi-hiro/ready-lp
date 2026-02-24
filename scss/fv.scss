@@ -1,0 +1,121 @@
+//ヘッダー
+.l-header {
+    display: flex;
+    justify-content: center; // 左右中央
+    align-items: center; // 上下中央
+    min-height: 30px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+
+    &_copy {
+        font-size: 12px;
+        font-weight: 600;
+
+        span {
+            color: #de8067;
+        }
+    }
+}
+
+//FV
+.fv {
+    &_visual {
+        position: relative;
+        overflow: hidden;
+        // ジム背景に掛ける白いオーバーレイ
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.72);
+            pointer-events: none;
+            z-index: 1; // 背景の上
+        }
+    }
+    // ジム背景
+    &_visual-img {
+        position: relative;
+        display: block;
+        width: 490px;
+        height: auto;
+        object-fit: cover;
+        object-position: left top;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        z-index: 0; //軸背景を一番奥に
+    }
+    // 抱っこママ
+    &_visual-mama {
+        position: absolute;
+        right: -90px; // 写真に合わせて微調整
+        bottom: 0;
+        width: 460px; // 好きなサイズに
+        height: auto;
+        z-index: 2;
+    }
+    // FVテキスト
+    &_catch {
+        position: absolute;
+        top: 50px;
+        left: 20px;
+        margin-top: -10px;
+        color: #232323;
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 1.4;
+        text-shadow:
+            0 0 6px rgba(255, 255, 255, 0.55),
+            0 0 12px rgba(255, 255, 255, 0.45),
+            0 0 18px rgba(255, 255, 255, 0.35);
+        z-index: 3; // テキストが一番手前
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 72px;
+            width: 260px; /* 四角の幅 */
+            height: 20px; /* 四角の高さ */
+            background: rgba(237, 213, 175, 0.9);
+            z-index: -1; /* 文字の後ろに回す */
+        }
+    }
+}
+
+// ========================
+// PC（1440px〜）
+// ========================
+@media screen and (min-width: 1440px) {
+    .l-header {
+        min-height: 72px;
+        &_copy {
+            font-size: 20px;
+        }
+    }
+    .fv {
+        // ジム背景
+        &_visual-img {
+            width: 1440px;
+            height: 600px; // ← 高さ600px
+        }
+        // 抱っこママ
+        &_visual-mama {
+            right: 80px; // 写真に合わせて微調整
+            bottom: -290px;
+            width: 1180px; // 好きなサイズに
+        }
+        // FVテキスト
+        &_catch {
+            top: 100px;
+            left: 270px;
+            font-size: 42px;
+            letter-spacing: 0.14em;
+            &::after {
+                left: 0;
+                bottom: 120px;
+                width: 460px; /* 四角の幅 */
+                height: 20px; /* 四角の高さ */
+            }
+        }
+    }
+}

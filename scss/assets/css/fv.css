@@ -1,0 +1,103 @@
+@charset "UTF-8";
+.l-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.l-header_copy {
+  font-size: 12px;
+  font-weight: 600;
+}
+.l-header_copy span {
+  color: #de8067;
+}
+
+.fv_visual {
+  position: relative;
+  overflow: hidden;
+}
+.fv_visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.72);
+  pointer-events: none;
+  z-index: 1;
+}
+.fv_visual-img {
+  position: relative;
+  display: block;
+  width: 490px;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: left top;
+     object-position: left top;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+.fv_visual-mama {
+  position: absolute;
+  right: -90px;
+  bottom: 0;
+  width: 460px;
+  height: auto;
+  z-index: 2;
+}
+.fv_catch {
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  margin-top: -10px;
+  color: #232323;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.55), 0 0 12px rgba(255, 255, 255, 0.45), 0 0 18px rgba(255, 255, 255, 0.35);
+  z-index: 3;
+}
+.fv_catch::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 72px;
+  width: 260px; /* 四角の幅 */
+  height: 20px; /* 四角の高さ */
+  background: rgba(237, 213, 175, 0.9);
+  z-index: -1; /* 文字の後ろに回す */
+}
+
+@media screen and (min-width: 1440px) {
+  .l-header {
+    min-height: 72px;
+  }
+  .l-header_copy {
+    font-size: 20px;
+  }
+  .fv_visual-img {
+    width: 1440px;
+    height: 600px;
+  }
+  .fv_visual-mama {
+    right: 80px;
+    bottom: -290px;
+    width: 1180px;
+  }
+  .fv_catch {
+    top: 100px;
+    left: 270px;
+    font-size: 42px;
+    letter-spacing: 0.14em;
+  }
+  .fv_catch::after {
+    left: 0;
+    bottom: 120px;
+    width: 460px; /* 四角の幅 */
+    height: 20px; /* 四角の高さ */
+  }
+}

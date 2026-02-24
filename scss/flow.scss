@@ -1,0 +1,205 @@
+.flow {
+    &_inner {
+        position: relative;
+    }
+    &_title {
+        position: relative;
+        text-align: center;
+        line-height: 1.2;
+    }
+    /* 上の茶色い帯 */
+    &_tag {
+        display: inline-block;
+        padding: 6px 22px;
+        background: #bb9677;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        border-radius: 3px;
+        margin-bottom: 14px;
+    }
+    /* 下の突起 */
+    &_tag::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 42px; // 突起の出る量
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid #bb9677; // 帯と同じ色
+    }
+    &_main {
+        position: relative;
+        display: block;
+        font-size: 30px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-shadow:
+            0 0 6px rgba(255, 255, 255, 0.9),
+            0 0 14px rgba(255, 255, 255, 0.7),
+            0 0 24px rgba(255, 255, 255, 0.5);
+    }
+    &_main_color {
+        color: #bb9677;
+    }
+    &_main_small {
+        color: #494949;
+        font-size: 24px;
+    }
+    /* あしらい “voice” */
+    &_title.deco-en::before {
+        left: 70%;
+        top: 70px;
+        color: #e42b2b;
+        font-size: 48px;
+        letter-spacing: 0.14em;
+        transform: rotate(8deg);
+        opacity: 0.3;
+    }
+
+    /* 01~03 */
+    &_list {
+        margin-top: 40px;
+        display: grid;
+        gap: 6px;
+    }
+}
+
+/* ===== flowCard ===== */
+.flowCard {
+    position: relative;
+    padding: 24px 18px 22px;
+    background: #fff;
+    border-radius: 22px;
+    // box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    overflow: visible;
+}
+
+/* 左のオレンジ角 */
+.flowCard::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 52px; /* 位置調整 */
+    width: 55px;
+    height: 55px;
+    background: #f3a764;
+}
+
+/* 丸番号 */
+.flowCard_num {
+    position: absolute;
+    left: 50%;
+    top: -18px;
+    transform: translateX(-50%);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #f3a764;
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+/* タイトル */
+.flowCard_title {
+    margin: 10px 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 800;
+    color: #b89474;
+    letter-spacing: 0.08em;
+}
+
+/* 画像枠 */
+.flowCard_image {
+    position: relative;
+    margin-top: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.flowCard_img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 本文 */
+.flowCard_text {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: 0.14rem;
+    color: #494949;
+}
+
+// ========================
+// PC（1440px〜）
+// ========================
+@media screen and (min-width: 1440px) {
+    .flow {
+        &_inner {
+            margin-bottom: 50px;
+        }
+        &_title.deco-en::before {
+            left: 58%;
+            top: 86px;
+            font-size: 75px;
+            opacity: 0.3;
+        }
+        &_tag {
+            font-size: 20px;
+        }
+        /* 下の突起 */
+        &_tag::after {
+            left: 50%;
+            bottom: 46px; // 突起の出る量
+        }
+        &_main_color {
+            font-size: 34px;
+            color: #bb9677;
+        }
+        &_main_small {
+            font-size: 30px;
+            color: #494949;
+        }
+
+        &_list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px;
+            align-items: start;
+        }
+
+        .flowCard {
+            width: auto; // ← これが重要（100%を殺す）
+            max-width: none; // ← 念のため
+            &_num {
+                top: -40px;
+                width: 56px;
+                height: 56px;
+                font-size: 26px;
+            }
+            &_title {
+                font-size: 22px;
+            }
+            &_text {
+                font-size: 16px;
+                font-weight: 500;
+                letter-spacing: 0.2rem;
+                line-height: 2rem;
+            }
+        }
+    }
+}

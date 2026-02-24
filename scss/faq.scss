@@ -1,0 +1,146 @@
+.faq {
+    position: relative;
+    padding-bottom: 60px;
+    background: url("../images/wood_bg.png") center / cover no-repeat;
+
+    &_inner {
+        position: relative;
+    }
+
+    &_head {
+        text-align: center;
+    }
+
+    &_title {
+        position: relative;
+        display: inline-block;
+        padding: 18px 0 10px;
+        font-size: 22px;
+        font-weight: 800;
+        color: #2d2d2d;
+        letter-spacing: 0.08em;
+        text-shadow:
+            0 0 6px rgba(255, 255, 255, 0.9),
+            0 0 14px rgba(255, 255, 255, 0.7),
+            0 0 24px rgba(255, 255, 255, 0.5);
+    }
+    /* あしらい “Reasons” */
+    &_title.deco-en::before {
+        left: 18%;
+        top: -26px;
+        color: #e42b2b;
+        opacity: 0.3;
+    }
+
+    &_list {
+        display: grid;
+        gap: 22px;
+    }
+}
+
+/* ===== FAQ CARD ===== */
+.faqCard {
+    background: rgba(255, 255, 255, 0.92);
+    margin: 0 20px;
+    padding: 18px 10px;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1);
+
+    &_q,
+    &_a {
+        display: grid;
+        grid-template-columns: 36px 1fr; // ← 左：アイコン、右：本文
+        column-gap: 20px;
+        align-items: start;
+    }
+
+    &_q {
+        margin-bottom: 26px;
+    }
+
+    &_icon {
+        flex: 0 0 auto;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-size: 16px;
+        font-family: "HGS明朝B";
+        line-height: 1;
+    }
+
+    &_icon--q {
+        background: #555;
+        color: #fff;
+    }
+
+    &_icon--a {
+        background: transparent;
+        color: #e77e7e;
+        border: 2px solid #e77e7e;
+    }
+
+    &_question {
+        margin: 4px auto;
+        font-size: 15px;
+        font-weight: 600;
+        color: #494949;
+        letter-spacing: 0.04em;
+        line-height: 1.6;
+    }
+
+    &_answer {
+        margin: 4px auto;
+        font-size: 12px;
+        font-weight: 500;
+        color: #494949;
+        line-height: 1.9;
+        letter-spacing: 0.03em;
+    }
+
+    &_accent {
+        color: #e77e7e;
+        font-weight: 800;
+    }
+}
+
+// ========================
+// PC（1440px〜）
+// ========================
+@media screen and (min-width: 1440px) {
+    .faq {
+        &_title {
+            font-size: 32px;
+        }
+        /* あしらい “Reasons” */
+        &_title.deco-en::before {
+            left: 18%;
+            top: -46px;
+        }
+    }
+    .faqCard {
+        width: 700px;
+        margin: 0 auto;
+        &_question {
+            font-size: 20px;
+        }
+        &_icon {
+            flex: 0 0 auto;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-weight: 800;
+            font-size: 20px;
+            line-height: 1;
+        }
+        &_question {
+            margin: 4px 0;
+        }
+
+        &_answer {
+            margin: 4px 0;
+        }
+    }
+}

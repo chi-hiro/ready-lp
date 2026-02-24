@@ -1,0 +1,108 @@
+@charset "UTF-8";
+.footer {
+  padding: 40px 0 26px;
+  background: #fff;
+  text-align: center;
+}
+.footer_inner {
+  display: flex;
+  flex-wrap: wrap; /* コピーを下段に落とす */
+  align-items: center;
+  justify-content: center; /* 全体を中央寄せ（右が右端に飛ばない） */
+  -moz-column-gap: 80px;
+       column-gap: 80px; /* ← ロゴと情報の“間”。ここで右の位置が決まる */
+  row-gap: 24px;
+}
+.footer_logo {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  max-width: 335px;
+}
+.footer_logo-img {
+  width: 210px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.footer_info {
+  padding: 0 20px;
+  text-align: left;
+  font-size: 13px;
+  color: #555;
+  letter-spacing: 0.08em;
+  line-height: 2;
+}
+.footer_info .footer_row {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.footer_info .footer_label {
+  font-weight: 700;
+  white-space: nowrap;
+}
+.footer_info .footer_value {
+  font-weight: 500;
+  white-space: nowrap;
+}
+.footer_copy {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #777;
+  letter-spacing: 0.18em;
+}
+
+.footer {
+  padding: 40px 0 26px;
+  background: #fff;
+  /* ロゴ（左） */
+}
+.footer_logo {
+  margin: 0;
+  flex: 0 0 auto;
+  max-width: 335px;
+}
+.footer_logo-img {
+  width: 210px;
+  height: auto;
+  display: block;
+}
+.footer {
+  /* 情報（右） */
+}
+.footer_info {
+  margin: 0;
+  flex: 0 0 auto;
+  text-align: left;
+  font-size: 13px;
+  color: #555;
+  letter-spacing: 0.08em;
+  line-height: 2;
+}
+.footer .footer_row {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.footer .footer_label {
+  font-weight: 700;
+  white-space: nowrap;
+}
+.footer .footer_value {
+  font-weight: 500;
+  white-space: nowrap;
+}
+.footer {
+  /* コピー（下段・中央） */
+}
+.footer_copy {
+  flex: 0 0 100%; /* 下段に固定 */
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+  letter-spacing: 0.18em;
+  margin: 0;
+}

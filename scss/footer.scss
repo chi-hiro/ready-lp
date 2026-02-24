@@ -1,0 +1,120 @@
+.footer {
+    padding: 40px 0 26px;
+    background: #fff;
+    text-align: center;
+
+    &_inner {
+        display: flex;
+        flex-wrap: wrap; /* コピーを下段に落とす */
+        align-items: center;
+
+        justify-content: center; /* 全体を中央寄せ（右が右端に飛ばない） */
+        column-gap: 80px; /* ← ロゴと情報の“間”。ここで右の位置が決まる */
+        row-gap: 24px;
+    }
+
+    &_logo {
+        position: relative;
+        display: inline-block;
+        margin: 0 auto;
+        max-width: 335px;
+
+        &-img {
+            // ✅ ここが正解
+            width: 210px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    &_info {
+        padding: 0 20px;
+        text-align: left;
+        font-size: 13px;
+        color: #555;
+        letter-spacing: 0.08em;
+        line-height: 2;
+
+        .footer_row {
+            display: grid;
+            grid-template-columns: 70px 1fr;
+            column-gap: 10px;
+        }
+
+        .footer_label {
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .footer_value {
+            font-weight: 500;
+            white-space: nowrap;
+        }
+    }
+
+    &_copy {
+        margin-top: 12px;
+        font-size: 12px;
+        color: #777;
+        letter-spacing: 0.18em;
+    }
+}
+
+// ========================
+// PC（1440px〜）
+// ========================
+.footer {
+    padding: 40px 0 26px;
+    background: #fff;
+
+    /* ロゴ（左） */
+    &_logo {
+        margin: 0;
+        flex: 0 0 auto;
+        max-width: 335px;
+
+        &-img {
+            width: 210px;
+            height: auto;
+            display: block;
+        }
+    }
+
+    /* 情報（右） */
+    &_info {
+        margin: 0;
+        flex: 0 0 auto;
+        text-align: left;
+        font-size: 13px;
+        color: #555;
+        letter-spacing: 0.08em;
+        line-height: 2;
+    }
+
+    .footer_row {
+        display: grid;
+        grid-template-columns: 70px 1fr;
+        column-gap: 10px;
+    }
+
+    .footer_label {
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    .footer_value {
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    /* コピー（下段・中央） */
+    &_copy {
+        flex: 0 0 100%; /* 下段に固定 */
+        text-align: center;
+        font-size: 12px;
+        color: #777;
+        letter-spacing: 0.18em;
+        margin: 0;
+    }
+}

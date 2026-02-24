@@ -1,0 +1,380 @@
+.voice {
+    &_inner {
+        margin-bottom: 10px;
+    }
+    &_title {
+        position: relative;
+        text-align: center;
+        line-height: 1.2;
+        padding: 20px 0 10px;
+    }
+
+    /* 上の茶色い帯 */
+    &_tag {
+        display: inline-block;
+        padding: 6px 18px;
+        background: #c8a07a;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        border-radius: 3px;
+        transform: rotate(3deg);
+        margin-bottom: 14px;
+    }
+
+    /* メイン：お客様の声 */
+    &_main {
+        position: relative;
+        display: inline-block;
+        font-size: 44px;
+        font-weight: 800;
+        color: #d7a1ad; /* ピンク */
+        letter-spacing: 0.06em;
+        padding-bottom: 10px;
+    }
+    &_main::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -10px; // 線の位置（上下調整）
+        transform: translateX(-50%);
+        width: 120%; // 線の長さ
+        height: 18px; // 線画像の高さ（見た目で調整）
+        background: url("../images/line_yellow.png") center / contain no-repeat;
+        z-index: -1; // 文字の後ろ
+        pointer-events: none;
+    }
+    /* サブ：紹介します！ */
+    &_sub {
+        display: block;
+        font-size: 26px;
+        font-weight: 800;
+        color: #555;
+        letter-spacing: 0.06em;
+    }
+    /* あしらい “voice” */
+    &_title.deco-en::before {
+        left: 70%;
+        top: 130px;
+        color: #e42b2b;
+        font-size: 32px;
+        letter-spacing: 0.14em;
+        transform: rotate(8deg);
+        opacity: 0.6;
+    }
+    &_contents {
+        position: relative;
+    }
+    &_bg {
+        position: relative;
+    }
+    &_bg-img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    &_visual {
+        position: absolute;
+        right: 0;
+        top: -10px; /* ←好みで調整 */
+        z-index: 2;
+    }
+    &_visual-img {
+        display: block;
+    }
+    .voice2 .voice_visual-img {
+        transform: scale(0.66) translate(-76px, -80px);
+    }
+    &_card {
+        position: absolute;
+        top: 90px;
+        z-index: 3;
+    }
+    &_catch {
+        margin: 0 auto;
+        font-size: 16px;
+        color: #f39b95;
+    }
+    &_clip {
+        position: absolute;
+        top: -10px;
+        left: 8px;
+        width: 26px;
+        height: 26px;
+        background: url("../images/clip.png") no-repeat center / contain;
+        z-index: 3;
+        pointer-events: none;
+    }
+    &_catch-line {
+        display: inline-block;
+        margin-left: 20px;
+        margin-bottom: 12px;
+        padding: 4px 6px;
+        background-color: rgba(255, 255, 255, 0.8); /* ←背景だけ透過 */
+        font-weight: 600;
+    }
+    &_meta {
+        display: inline-block;
+        margin: 0 0 0 20px;
+        padding: 4px 10px;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 1.2px;
+        background: linear-gradient(-90deg, #f6c1bc 0%, #f5d5d1 100%);
+    }
+    /* 上下ライン */
+    &_meta::before,
+    &_meta::after {
+        content: "";
+        position: absolute;
+        left: 20px;
+        width: 96px;
+        height: 2px;
+        background: rgba(246, 193, 188, 1); /* 好みで */
+    }
+    &_meta::before {
+        top: 82px;
+    }
+    &_meta::after {
+        top: 116px;
+    }
+    &_gap {
+        display: inline-block;
+        width: 10px;
+    }
+    &_text {
+        margin: 10px 0 0 20px;
+        padding: 12px 0;
+        width: 330px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.8;
+        letter-spacing: 0.14rem;
+        background-color: #fff;
+        p {
+            margin: 0 auto;
+            padding: 0 6px;
+        }
+        p + p {
+            margin-top: 14px;
+        }
+    }
+    &_text::before {
+        content: "";
+        position: absolute;
+        top: 126px; /* ずらし量 */
+        left: 24px;
+        width: 330px;
+        height: 302px;
+        background: rgba(243, 155, 149, 0.4); /* 後ろの薄いカード */
+        z-index: -1;
+    }
+    &_contents + &_contents {
+        margin-top: 30px;
+    }
+    /* 2個目・4個目だけ反転 */
+    &_contents.is-reverse {
+        .voice {
+            &_visual {
+                left: 0;
+            }
+            &_catch {
+                color: #7dcdd0;
+            }
+            &_clip {
+                left: 106px;
+            }
+            &_catch-line {
+                margin-left: 116px;
+            }
+            &_meta {
+                margin: 0 0 0 220px;
+                background: linear-gradient(-90deg, #7dcdd0 0%, #a4e7e9 100%);
+            }
+            &_meta::before,
+            &_meta::after {
+                left: 220px;
+                width: 96px;
+                background: rgba(125, 205, 208, 1);
+            }
+            &_text::before {
+                top: 126px; /* ずらし量 */
+                left: 16px;
+                width: 330px;
+                height: 302px;
+                background: rgba(125, 205, 208, 0.4); /* 後ろの薄いカード */
+            }
+        }
+    }
+}
+
+// ========================
+// PC（1440px〜）
+// ========================
+@media screen and (min-width: 1440px) {
+    .voice {
+        &_inner {
+            margin-bottom: 0px;
+        }
+        &_contents {
+            margin-top: -40px;
+        }
+        &_contents + &_contents {
+            margin-top: 40px;
+        }
+        &_tag {
+            padding: 6px 18px;
+            background: #c8a07a;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            border-radius: 3px;
+            transform: rotate(3deg);
+            margin-bottom: 14px;
+        }
+        &_main {
+            display: block;
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            padding-bottom: 15px;
+        }
+        &_main::after {
+            left: 50%;
+            bottom: 10px; // 線の位置（上下調整）
+        }
+        &_sub {
+            font-size: 30px;
+        }
+        /* あしらい “voice” */
+        &_title.deco-en::before {
+            left: 58%;
+            top: 150px;
+            font-size: 50px;
+        }
+        &_bg-img {
+            content: url("../images/voice_bg1_pc.png");
+        }
+        &_bg-img-rev {
+            content: url("../images/voice_bg2_pc.png");
+        }
+        &_visual {
+            position: absolute;
+            top: 35px; /* ←好みで調整 */
+            right: 330px;
+        }
+        &_visual-img {
+            display: block;
+        }
+        .voice1 .voice_visual-img {
+            transform: scale(1.28);
+        }
+        .voice2 .voice_visual-img {
+            transform: scale(0.9) translate(30px, -6px);
+        }
+        .voice3 .voice_visual-img {
+            transform: scale(1.54);
+        }
+        .voice4 .voice_visual-img {
+            transform: scale(1.22) translate(70px, 16px);
+        }
+        .voice5 .voice_visual-img {
+            transform: scale(1.44);
+        }
+        &_catch-line {
+            display: block; // ← これで確実に改行される
+            width: fit-content; // ← 背景を文字幅に合わせる
+            margin-left: 20px;
+            margin-bottom: 12px;
+            padding: 4px 6px;
+            background-color: rgba(255, 255, 255, 1); /* ←背景だけ透過 */
+            font-size: 22px;
+            font-weight: 600;
+        }
+        &_card {
+            left: 50%;
+            transform: translateX(-50%);
+            width: 860px; // 中身に合わせる
+        }
+        &_meta {
+            display: inline-block;
+            margin: 0 0 0 20px;
+            padding: 4px 30px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            background: linear-gradient(-90deg, #f6c1bc 0%, #f5d5d1 100%);
+        }
+        /* 上下ライン */
+        &_meta::before,
+        &_meta::after {
+            content: "";
+            position: absolute;
+            left: 20px;
+            width: 158px;
+            height: 2px;
+            background: rgba(246, 193, 188, 1); /* 好みで */
+        }
+        &_meta::before {
+            top: 100px;
+        }
+        &_meta::after {
+            top: 139px;
+        }
+        &_text {
+            margin: 0 auto;
+            padding: 30px 0;
+            width: 900px;
+            height: 145px;
+            font-size: 16px;
+            letter-spacing: 0.14em;
+        }
+        &_text::before {
+            top: 146px; /* ずらし量 */
+            left: 8px;
+            width: 900px;
+            height: 204px;
+            background: rgba(243, 155, 149, 0.4); /* 後ろの薄いカード */
+            z-index: -1;
+        }
+        /* 2個目・4個目だけ反転 */
+        &_contents.is-reverse {
+            .voice {
+                &_visual {
+                    position: absolute;
+                    top: -35px; /* ←好みで調整 */
+                    left: 330px;
+                }
+                &_clip {
+                    left: 406px;
+                }
+                &_catch-line {
+                    margin-left: 416px;
+                }
+                &_meta {
+                    margin: 0 0 0 680px;
+                }
+                &_meta::before,
+                &_meta::after {
+                    left: 680px;
+                    width: 158px;
+                    background: rgba(125, 205, 208, 1);
+                }
+                &_text::before {
+                    top: 146px; /* ずらし量 */
+                    left: 8px;
+                    width: 900px;
+                    height: 204px;
+                    background: rgba(125, 205, 208, 0.4); /* 後ろの薄いカード */
+                }
+            }
+        }
+        &_contents + &_contents {
+            margin-top: -30px;
+        }
+    }
+}

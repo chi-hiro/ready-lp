@@ -1,0 +1,130 @@
+@charset "UTF-8";
+.faq {
+  position: relative;
+  padding-bottom: 60px;
+  background: url("../images/wood_bg.png") center/cover no-repeat;
+}
+.faq_inner {
+  position: relative;
+}
+.faq_head {
+  text-align: center;
+}
+.faq_title {
+  position: relative;
+  display: inline-block;
+  padding: 18px 0 10px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #2d2d2d;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.9), 0 0 14px rgba(255, 255, 255, 0.7), 0 0 24px rgba(255, 255, 255, 0.5);
+}
+.faq {
+  /* あしらい “Reasons” */
+}
+.faq_title.deco-en::before {
+  left: 18%;
+  top: -26px;
+  color: #e42b2b;
+  opacity: 0.3;
+}
+.faq_list {
+  display: grid;
+  gap: 22px;
+}
+
+/* ===== FAQ CARD ===== */
+.faqCard {
+  background: rgba(255, 255, 255, 0.92);
+  margin: 0 20px;
+  padding: 18px 10px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1);
+}
+.faqCard_q, .faqCard_a {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  align-items: start;
+}
+.faqCard_q {
+  margin-bottom: 26px;
+}
+.faqCard_icon {
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  font-family: "HGS明朝B";
+  line-height: 1;
+}
+.faqCard_icon--q {
+  background: #555;
+  color: #fff;
+}
+.faqCard_icon--a {
+  background: transparent;
+  color: #e77e7e;
+  border: 2px solid #e77e7e;
+}
+.faqCard_question {
+  margin: 4px auto;
+  font-size: 15px;
+  font-weight: 600;
+  color: #494949;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+}
+.faqCard_answer {
+  margin: 4px auto;
+  font-size: 12px;
+  font-weight: 500;
+  color: #494949;
+  line-height: 1.9;
+  letter-spacing: 0.03em;
+}
+.faqCard_accent {
+  color: #e77e7e;
+  font-weight: 800;
+}
+
+@media screen and (min-width: 1440px) {
+  .faq_title {
+    font-size: 32px;
+  }
+  .faq {
+    /* あしらい “Reasons” */
+  }
+  .faq_title.deco-en::before {
+    left: 18%;
+    top: -46px;
+  }
+  .faqCard {
+    width: 700px;
+    margin: 0 auto;
+  }
+  .faqCard_question {
+    font-size: 20px;
+  }
+  .faqCard_icon {
+    flex: 0 0 auto;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 1;
+  }
+  .faqCard_question {
+    margin: 4px 0;
+  }
+  .faqCard_answer {
+    margin: 4px 0;
+  }
+}

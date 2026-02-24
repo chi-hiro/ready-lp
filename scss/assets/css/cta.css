@@ -1,0 +1,220 @@
+@charset "UTF-8";
+.cta {
+  height: 316px;
+  background: url("../images/cta-bg.png") no-repeat center/cover;
+}
+.cta_inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.cta_card > * {
+  position: relative;
+  z-index: 3;
+}
+.cta_card {
+  position: relative;
+  text-align: center;
+  width: 335px;
+  height: 285px;
+  background: #fff;
+  border-radius: 15px;
+  z-index: 5;
+}
+.cta_card::before {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 270px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  border: 3px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(135deg, #c9b5a3, #d9cbaa, #d9d6a8) border-box;
+  z-index: 0;
+}
+.cta_lead {
+  margin: 12px auto 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  line-height: 1.6;
+}
+.cta_note {
+  position: absolute;
+  top: 176px;
+  right: 10px;
+  display: inline-block;
+  text-align: center;
+  font-family: "あさご本丸ゴシックmini";
+  font-size: 12px;
+  letter-spacing: 0.001rem;
+  transform: rotate(6.5deg);
+  background: linear-gradient(105deg, rgb(128, 78, 36), rgb(163, 111, 67));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.8), 0 0 8px rgba(255, 255, 255, 0.45);
+  z-index: 999;
+}
+.cta_note::after {
+  content: "";
+  position: absolute;
+  left: 54%;
+  bottom: -10px; /* ← 高さは微調整 */
+  transform: translateX(-50%) rotate(-6deg);
+  width: 120px;
+  height: 22px;
+  background: url("../images/heart-line.png") no-repeat center/contain;
+  z-index: 999;
+}
+.cta .cta_title {
+  margin: 20px auto 0;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+.cta .cta_title-em {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(45deg, rgb(140, 105, 70), rgb(238, 210, 170), rgb(168, 125, 90));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.cta .cta_title span {
+  display: block;
+  text-align: center;
+}
+.cta .cta_title span + span {
+  margin-top: 1px;
+}
+.cta .c-cta_wrapper {
+  position: relative;
+  margin-top: 42px;
+  text-align: center;
+}
+.cta .c-cta_wrapper .c-cta_button {
+  /* 配置・基準 */
+  position: relative;
+  margin: 0 auto;
+  /* レイアウト */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* サイズ */
+  width: 300px;
+  height: 42px;
+  /* 見た目 */
+  background-color: #dc8165;
+  border-radius: 26px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  /* テキスト */
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+.cta .c-cta_wrapper .c-cta_button .c-cta_label {
+  pointer-events: none;
+}
+.cta .c-cta_wrapper .c-cta_button {
+  /* ▶ アイコンだけ右寄せ（テキストは中央のまま） */
+}
+.cta .c-cta_wrapper .c-cta_button .c-cta_icon {
+  position: absolute;
+  right: 18px;
+  width: 12px;
+  height: auto;
+}
+
+@media screen and (min-width: 1440px) {
+  .cta {
+    height: 240px;
+  }
+  .cta_inner {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cta_card {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    grid-template-rows: auto auto;
+    -moz-column-gap: 28px;
+         column-gap: 28px;
+    row-gap: 10px;
+    align-items: center;
+    padding: 26px 44px;
+    width: 720px;
+    height: 150px;
+    text-align: left;
+    border-radius: 18px;
+  }
+  .cta_card::before {
+    width: calc(100% - 26px);
+    height: calc(100% - 26px);
+    border-radius: 18px;
+  }
+  .cta .cta_title {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 10px 0 0;
+    font-size: 26px;
+    letter-spacing: 0.12em;
+    line-height: 1.25;
+  }
+  .cta .cta_title-em {
+    font-size: 40px;
+    white-space: nowrap;
+  }
+  .cta .cta_title span {
+    text-align: left;
+    display: block;
+  }
+  .cta .cta_title span + span {
+    margin-top: 6px;
+  }
+  .cta .cta_title span:nth-child(2) {
+    display: inline;
+  }
+  .cta .cta_title span:nth-child(3) {
+    display: inline;
+    white-space: nowrap;
+  }
+  .cta_lead {
+    grid-column: 1/-1;
+    grid-row: 2;
+    margin: 0;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.7;
+    letter-spacing: 0.13em;
+  }
+  .cta .cta_lead br {
+    display: none;
+  }
+  .cta .c-cta_wrapper {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 50px 0 0;
+    justify-self: end;
+    align-self: center;
+    text-align: center;
+  }
+  .cta_note {
+    top: 30px;
+    right: 44px;
+  }
+  .cta_note::after {
+    width: 130px;
+    height: 24px;
+    bottom: -12px;
+  }
+}

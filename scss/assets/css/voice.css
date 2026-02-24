@@ -1,0 +1,343 @@
+@charset "UTF-8";
+.voice_inner {
+  margin-bottom: 40px;
+}
+.voice_title {
+  position: relative;
+  text-align: center;
+  line-height: 1.2;
+  padding: 20px 0 10px;
+}
+.voice {
+  /* 上の茶色い帯 */
+}
+.voice_tag {
+  display: inline-block;
+  padding: 6px 18px;
+  background: #c8a07a;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border-radius: 3px;
+  transform: rotate(3deg);
+  margin-bottom: 14px;
+}
+.voice {
+  /* メイン：お客様の声 */
+}
+.voice_main {
+  position: relative;
+  display: inline-block;
+  font-size: 44px;
+  font-weight: 800;
+  color: #d7a1ad; /* ピンク */
+  letter-spacing: 0.06em;
+  padding-bottom: 10px;
+}
+.voice_main::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 18px;
+  background: url("../images/line_yellow.png") center/contain no-repeat;
+  z-index: -1;
+  pointer-events: none;
+}
+.voice {
+  /* サブ：紹介します！ */
+}
+.voice_sub {
+  display: block;
+  font-size: 26px;
+  font-weight: 800;
+  color: #555;
+  letter-spacing: 0.06em;
+}
+.voice {
+  /* あしらい “voice” */
+}
+.voice_title.deco-en::before {
+  left: 70%;
+  top: 130px;
+  color: #e42b2b;
+  font-size: 32px;
+  letter-spacing: 0.14em;
+  transform: rotate(8deg);
+  opacity: 0.6;
+}
+.voice_contents {
+  position: relative;
+}
+.voice_bg {
+  position: relative;
+}
+.voice_bg-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.voice_visual {
+  position: absolute;
+  right: 0;
+  top: -10px; /* ←好みで調整 */
+  z-index: 2;
+}
+.voice_visual-img {
+  display: block;
+}
+.voice_card {
+  position: absolute;
+  top: 90px;
+  z-index: 3;
+}
+.voice_catch {
+  margin: 0 auto;
+  font-size: 16px;
+  color: #f39b95;
+}
+.voice_clip {
+  position: absolute;
+  top: -10px;
+  left: 8px;
+  width: 26px;
+  height: 26px;
+  background: url("../images/clip.png") no-repeat center/contain;
+  z-index: 3;
+  pointer-events: none;
+}
+.voice_catch-line {
+  display: inline-block;
+  margin-left: 20px;
+  margin-bottom: 12px;
+  padding: 4px 6px;
+  background-color: rgba(255, 255, 255, 0.6); /* ←背景だけ透過 */
+  font-weight: 600;
+}
+.voice_meta {
+  display: inline-block;
+  margin: 0 0 0 20px;
+  padding: 4px 10px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  background: linear-gradient(-90deg, #f6c1bc 0%, #f5d5d1 100%);
+}
+.voice {
+  /* 上下ライン */
+}
+.voice_meta::before, .voice_meta::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  width: 96px;
+  height: 2px;
+  background: rgb(246, 193, 188); /* 好みで */
+}
+.voice_meta::before {
+  top: 82px;
+}
+.voice_meta::after {
+  top: 116px;
+}
+.voice_gap {
+  display: inline-block;
+  width: 10px;
+}
+.voice_text {
+  margin: 10px 0 0 20px;
+  padding: 6px 0;
+  width: 330px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.8;
+  background-color: #fff;
+}
+.voice_text p {
+  margin: 0 auto;
+  padding: 0 6px;
+}
+.voice_text p + p {
+  margin-top: 14px;
+}
+.voice_text::before {
+  content: "";
+  position: absolute;
+  top: 126px; /* ずらし量 */
+  left: 24px;
+  width: 330px;
+  height: 268px;
+  background: rgba(243, 155, 149, 0.4); /* 後ろの薄いカード */
+  z-index: -1;
+}
+.voice {
+  /* 2個目・4個目だけ反転 */
+}
+.voice_contents.is-reverse .voice_visual {
+  left: 0;
+}
+.voice_contents.is-reverse .voice_catch {
+  color: #7dcdd0;
+}
+.voice_contents.is-reverse .voice_clip {
+  left: 106px;
+}
+.voice_contents.is-reverse .voice_catch-line {
+  margin-left: 116px;
+}
+.voice_contents.is-reverse .voice_meta {
+  margin: 0 0 0 220px;
+  background: linear-gradient(-90deg, #7dcdd0 0%, #a4e7e9 100%);
+}
+.voice_contents.is-reverse .voice_meta::before, .voice_contents.is-reverse .voice_meta::after {
+  left: 220px;
+  width: 96px;
+  background: rgb(125, 205, 208);
+}
+.voice_contents.is-reverse .voice_text::before {
+  top: 126px; /* ずらし量 */
+  left: 16px;
+  width: 330px;
+  height: 268px;
+  background: rgba(125, 205, 208, 0.4); /* 後ろの薄いカード */
+}
+
+@media screen and (min-width: 1440px) {
+  .voice_tag {
+    padding: 6px 18px;
+    background: #c8a07a;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    border-radius: 3px;
+    transform: rotate(3deg);
+    margin-bottom: 14px;
+  }
+  .voice_main {
+    display: block;
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    padding-bottom: 15px;
+  }
+  .voice_main::after {
+    left: 50%;
+    bottom: 10px;
+  }
+  .voice_sub {
+    font-size: 30px;
+  }
+  .voice {
+    /* あしらい “voice” */
+  }
+  .voice_title.deco-en::before {
+    left: 58%;
+    top: 150px;
+    font-size: 50px;
+  }
+  .voice_bg-img {
+    content: url("../images/voice_bg1_pc.png");
+  }
+  .voice_bg-img-rev {
+    content: url("../images/voice_bg2_pc.png");
+  }
+  .voice_visual {
+    position: absolute;
+    top: -35px; /* ←好みで調整 */
+    right: 330px;
+  }
+  .voice_visual-img {
+    display: block;
+    transform: scale(1.08); /* ← ここで大きさ調整 */
+  }
+  .voice_catch-line {
+    display: block;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: 20px;
+    margin-bottom: 12px;
+    padding: 4px 6px;
+    background-color: rgb(255, 255, 255); /* ←背景だけ透過 */
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .voice_card {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 860px;
+  }
+  .voice_meta {
+    display: inline-block;
+    margin: 0 0 0 20px;
+    padding: 4px 30px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    background: linear-gradient(-90deg, #f6c1bc 0%, #f5d5d1 100%);
+  }
+  .voice {
+    /* 上下ライン */
+  }
+  .voice_meta::before, .voice_meta::after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    width: 158px;
+    height: 2px;
+    background: rgb(246, 193, 188); /* 好みで */
+  }
+  .voice_meta::before {
+    top: 100px;
+  }
+  .voice_meta::after {
+    top: 139px;
+  }
+  .voice_text {
+    margin: 0 auto;
+    padding: 20px 0;
+    width: 860px;
+  }
+  .voice_text::before {
+    top: 146px; /* ずらし量 */
+    left: 8px;
+    width: 860px;
+    height: 168px;
+    background: rgba(243, 155, 149, 0.4); /* 後ろの薄いカード */
+    z-index: -1;
+  }
+  .voice {
+    /* 2個目・4個目だけ反転 */
+  }
+  .voice_contents.is-reverse .voice_visual {
+    position: absolute;
+    top: -35px; /* ←好みで調整 */
+    left: 330px;
+  }
+  .voice_contents.is-reverse .voice_clip {
+    left: 406px;
+  }
+  .voice_contents.is-reverse .voice_catch-line {
+    margin-left: 416px;
+  }
+  .voice_contents.is-reverse .voice_meta {
+    margin: 0 0 0 680px;
+  }
+  .voice_contents.is-reverse .voice_meta::before, .voice_contents.is-reverse .voice_meta::after {
+    left: 680px;
+    width: 158px;
+    background: rgb(125, 205, 208);
+  }
+  .voice_contents.is-reverse .voice_text::before {
+    top: 146px; /* ずらし量 */
+    left: 8px;
+    width: 860px;
+    height: 168px;
+    background: rgba(125, 205, 208, 0.4); /* 後ろの薄いカード */
+  }
+}

@@ -1,0 +1,364 @@
+.price {
+    position: relative;
+    overflow: hidden;
+    &_inner {
+        background-color: #e5eeef;
+        padding-bottom: 35px;
+    }
+    &_title {
+        margin-top: -20px;
+    }
+    &_tag {
+        position: relative;
+        top: 14px;
+        left: -70px;
+        display: inline-block;
+        padding: 2px 18px;
+        background: #68a9ab;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        border-radius: 15px;
+        transform: rotate(-4deg);
+        margin-bottom: 14px;
+    }
+    &_main {
+        display: block;
+        font-size: 24px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        padding-bottom: 15px;
+        text-shadow:
+            0 0 6px rgba(255, 255, 255, 0.9),
+            0 0 14px rgba(255, 255, 255, 0.7),
+            0 0 24px rgba(255, 255, 255, 0.5);
+    }
+    &_main::after {
+        left: 50%;
+        bottom: 10px; // 線の位置（上下調整）
+    }
+    &_sub {
+        display: inline-block;
+        color: #76d3d6;
+        font-size: 14px;
+        letter-spacing: 0.14em;
+        text-shadow:
+            0 0 6px rgba(255, 255, 255, 0.9),
+            0 0 14px rgba(255, 255, 255, 0.7),
+            0 0 24px rgba(255, 255, 255, 0.5);
+    }
+    /* あしらい “price” */
+    &_title.deco-en::before {
+        top: 20px;
+        color: #919191;
+        font-size: 76px;
+        letter-spacing: 0.19rem;
+        opacity: 0.15;
+    }
+    /* 下に膨らむ曲線を作る（白い楕円を下にはみ出させる） */
+    &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 1030px; /* ここで“膨らみ量”調整 */
+        transform: translateX(-50%);
+        width: 140%;
+        height: 340px; /* ここで曲線の深さ調整 */
+        background: url("../images/price_title.png") center / cover no-repeat;
+        border-radius: 50%;
+        filter: drop-shadow(0 20px 20px rgba(0, 0, 0, 0.03));
+        z-index: 0;
+    }
+    &_body {
+        position: relative;
+        z-index: 0;
+        .priceCard {
+            position: relative;
+            text-align: center;
+            margin-bottom: 30px;
+            &_copy {
+                position: relative;
+                margin: 0 auto;
+                padding: 6px 8px;
+                width: 250px;
+                font-size: 13px;
+                font-weight: 500;
+                background-color: #fff;
+                border-radius: 20px;
+                z-index: 2;
+            }
+            &_accent_01 {
+                color: #99ba4d;
+            }
+            &_accent_02 {
+                color: #4f9fc0;
+            }
+            &_accent_03 {
+                color: #bd9f3f;
+            }
+            &_accent_04 {
+                color: #de8067;
+            }
+            &_title {
+                position: relative;
+                margin: -10px auto 0;
+                padding: 20px 0;
+                width: 335px;
+                color: #fff;
+                font-size: 18px;
+                font-weight: 600;
+                z-index: 1;
+            }
+            &_bg_color_01 {
+                background-color: #99ba4d;
+            }
+            &_bg_color_02 {
+                background-color: #4f9fc0;
+            }
+            &_bg_color_03 {
+                background-color: #bd9f3f;
+            }
+            &_price {
+                margin: 0 auto;
+                padding: 20px 0;
+                width: 335px;
+                font-size: 16px;
+                font-weight: 600;
+                background-color: #fff;
+            }
+            &_price-num {
+                font-size: 26px;
+            }
+            &_txt_color_01 {
+                color: #99ba4d;
+            }
+            &_txt_color_02 {
+                color: #4f9fc0;
+            }
+            &_txt_color_03 {
+                color: #bd9f3f;
+            }
+        }
+    }
+    .priceTicket {
+        position: relative;
+        text-align: center;
+        &_title {
+            position: relative;
+            margin: -10px auto 0;
+            padding: 20px 0;
+            width: 335px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            background-color: #757575;
+        }
+        &_list {
+            width: 335px; /* ← 中央寄せする幅 */
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 10px 0;
+            font-size: 20px;
+            font-weight: 400;
+        }
+        &_row {
+            display: flex;
+            align-items: baseline;
+        }
+        // ③行目（有効期限）の行だけ右寄せにする
+        &_row:last-child {
+            justify-content: flex-end;
+        }
+        &_name {
+            width: 70px; /* 左列を揃える */
+            text-align: right;
+            margin-left: 50px;
+            font-weight: 700;
+            color: #444;
+        }
+        &_value {
+            margin-left: 20px;
+            font-weight: 700;
+            color: #444;
+        }
+        &_tax {
+            font-size: 12px;
+        }
+        &_note {
+            position: static;
+            font-size: 12px;
+            margin-top: 12px;
+        }
+    }
+    // 逆三角形の配置
+    &_bottom {
+        width: 0;
+        height: 0;
+        margin: 0px auto 50px;
+        border-left: 187.5px solid transparent; // 375px の半分
+        border-right: 187.5px solid transparent;
+        border-top: 50px solid #e5eeef;
+        position: relative;
+    }
+    &_bottom::after {
+        content: "";
+        position: absolute;
+        left: -187.5px;
+        top: -48px; /* ← 影の位置微調整 */
+        border-left: 187.5px solid transparent;
+        border-right: 187.5px solid transparent;
+        border-top: 50px solid rgba(0, 0, 0, 0.15);
+        filter: blur(4px); /* ← 影っぽく */
+        z-index: -1;
+    }
+}
+
+// ========================
+// PC（1440px〜）
+// ========================
+
+@media screen and (min-width: 1440px) {
+    .price {
+        &_inner {
+            padding-bottom: 32px;
+        }
+        &_head {
+            position: relative;
+        }
+        &_tag {
+            top: -4px;
+            font-size: 22px;
+        }
+        &_main {
+            font-size: 32px;
+        }
+        &_sub {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        /* あしらい “price” */
+        &_title.deco-en::before {
+            position: absolute;
+            top: 20px;
+            left: 42%;
+            transform: rotate(-10deg);
+            font-size: 100px;
+            letter-spacing: 0.14rem;
+            opacity: 0.2;
+        }
+        /* 下に膨らむ曲線を作る（白い楕円を下にはみ出させる） */
+        &::after {
+            position: absolute;
+            left: 50%;
+            bottom: 800px; /* ここで“膨らみ量”調整 */
+            transform: translateX(-50%);
+            width: 140%;
+            height: 380px; /* ここで曲線の深さ調整 */
+        }
+        &_body {
+            .priceCard {
+                position: relative;
+                text-align: center;
+                margin-bottom: 0px;
+                &_copy {
+                    position: relative;
+                    top: 46px;
+                    left: -280px;
+                    margin: 0 auto;
+                    padding: 6px 8px;
+                    width: 250px;
+                    font-size: 13px;
+                }
+                &_title {
+                    margin: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                &_title_plan {
+                    font-size: 18px;
+                    margin-top: 35px;
+                }
+                &_price {
+                    margin: 0;
+                    width: 570px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 20px;
+                }
+                &_price-num {
+                    font-size: 34px;
+                }
+                &_price-unit {
+                    margin-top: 10px;
+                    margin-left: 10px;
+                }
+            }
+            .plan_header {
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+                height: 130px;
+            }
+        }
+        .priceTicket {
+            &_title {
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 18px;
+            }
+            &_title span {
+                margin: 20px auto 0;
+            }
+            &_list {
+                margin: 0;
+                width: 570px;
+                font-size: 20px;
+            }
+            &_row {
+                display: flex;
+                align-items: baseline;
+                height: 30px;
+            }
+            // ③行目（有効期限）の行だけ右寄せにする
+            &_row:last-child {
+                justify-content: flex-end;
+            }
+            &_name {
+                position: relative;
+                top: 20px;
+                left: 100px;
+            }
+            &_value {
+                position: relative;
+                top: 20px;
+                left: 100px;
+                margin-left: 20px;
+                font-weight: 700;
+                color: #444;
+            }
+            &_tax {
+                font-size: 16px;
+            }
+            &_note {
+                margin-top: 36px;
+                margin-right: 20px;
+            }
+        }
+        // 逆三角形の配置
+        &_bottom {
+            border-left: 720px solid transparent;
+            border-right: 720px solid transparent;
+        }
+        &_bottom::after {
+            left: -720px; // 1440/2
+            top: -48px;
+            border-left: 720px solid transparent;
+            border-right: 720px solid transparent;
+        }
+    }
+}
